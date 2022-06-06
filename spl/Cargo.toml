@@ -1,0 +1,25 @@
+[package]
+name = "anchor-spl"
+version = "0.24.2"
+authors = ["Serum Foundation <foundation@projectserum.com>"]
+rust-version = "1.56"
+edition = "2021"
+license = "Apache-2.0"
+description = "CPI clients for SPL programs"
+
+[features]
+default = ["mint", "token", "associated_token"]
+mint = []
+token = ["safe-token"]
+associated_token = ["safe-associated-token-account"]
+governance = []
+shmem = []
+devnet = []
+dex = ["serum_dex"]
+
+[dependencies]
+anchor-lang = { path = "../lang", features = ["derive"] }
+serum_dex = { git = "https://github.com/safely-project/safely-dex", version = "0.5.5", features = ["no-entrypoint"], optional = true }
+safecoin-program = {path = "../../Safecoin/sdk/program"}
+safe-token = { features = ["no-entrypoint"], optional = true,  path = "../../safecoin-program-library/token/program"}
+safe-associated-token-account = { features = ["no-entrypoint"], optional = true, path = "../../safecoin-program-library/associated-token-account/program" }
