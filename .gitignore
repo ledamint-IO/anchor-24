@@ -21,3 +21,7 @@ cli/npm-package/anchor
 cli/npm-package/*.tgz
 docker-target
 .rollup.cache/
+tests/auction-house
+tests/auction-house
+tests/cfo/deps/swap
+tests/swap/deps/serum-dex
